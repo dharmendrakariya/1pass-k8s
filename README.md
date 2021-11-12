@@ -69,3 +69,19 @@ spec:
 
 Note: redis-secret need to be created in ```jack``` vault
 
+
+- Useful Commands
+
+```
+kubectl get secret redis-secret  -o go-template='
+{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
+
+```
+
+```
+kubectl get secret jack-password  -o go-template='
+{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
+
+```
+
+Above commands will show the created secret data

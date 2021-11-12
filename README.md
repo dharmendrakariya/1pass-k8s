@@ -20,6 +20,9 @@ spec:
 Note: ```jack-password``` needs to be created beforehand in ```jack``` vault
 
 
+
+To test the Deployment, use below manifest
+
 ```
 apiVersion: apps/v1
 kind: Deployment
